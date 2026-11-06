@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f8f8ef" />
+    <meta
+      name="description"
+      content="嘉丰的小小博客，记录编程学习、生活碎片和沿途的风景。"
+    />
+    <title>嘉丰的小小博客 · 把热爱慢慢收藏</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <script src="/js/common.js" defer></script>
+    <script src="/js/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到主要内容</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="#home" aria-label="嘉丰的小小博客首页">
+          <img src="/assets/favicon.svg" alt="" width="43" height="43" />
+          <span>嘉丰的小小博客<small>A LITTLE SPACE OF MINE</small></span>
+        </a>
+        <nav aria-label="主导航" class="desktop-nav">
+          <a href="#home" data-nav="home"><span data-icon="home"></span>首页</a>
+          <a href="#categories" data-nav="categories"
+            ><span data-icon="grid"></span>文章分类</a
+          >
+          <a href="#archive" data-nav="archive"
+            ><span data-icon="archive"></span>时光归档</a
+          >
+          <a href="#about" data-nav="about"
+            ><span data-icon="smile"></span>关于我</a
+          >
+        </nav>
+        <div class="header-actions">
+          <form id="search-form" class="search-form" role="search">
+            <span data-icon="search"></span
+            ><input
+              id="search-input"
+              type="search"
+              maxlength="100"
+              placeholder="发现一点小美好…"
+              aria-label="搜索文章"
+            /><kbd>/</kbd>
+          </form>
+          <a
+            id="header-admin-link"
+            class="header-admin-link"
+            href="/admin/index.html#dashboard"
+            hidden
+          >
+            <span data-icon="grid"></span
+            ><span class="admin-link-full">进入后台</span
+            ><span class="admin-link-short">后台</span>
+          </a>
+          <button id="account-button" class="account-button" type="button">
+            <span data-icon="user"></span
+            ><span id="account-label">登录 / 注册</span>
+          </button>
+          <button
+            id="menu-button"
+            class="icon-button mobile-menu"
+            aria-label="展开导航"
+            aria-expanded="false"
+            type="button"
+          >
+            <span data-icon="menu"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" class="page-shell">
+      <section class="hero" id="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <div class="hero-eyebrow">
+            <span class="little-star">✦</span> HELLO, WORLD!
+            <span class="eyebrow-line"></span> 很高兴遇见你
+          </div>
+          <h1 id="hero-title">
+            把日子写成故事，<br />把<span class="highlight"
+              >热爱慢慢收藏<svg viewBox="0 0 260 15" aria-hidden="true">
+                <path d="M4 10Q125-3 255 8M25 14Q140 4 239 13" /></svg></span
+            >。
+          </h1>
+          <p>
+            这里装着我的代码笔记、生活碎片，还有一路上的好风景。<br />世界很大，我们一起慢慢探索，慢慢发光。
+          </p>
+          <div class="hero-actions">
+            <a class="button button-dark" href="#feed" id="explore-button"
+              >逛逛我的博客 <span data-icon="arrow-right"></span></a
+            ><a class="hero-about" href="#about"
+              >认识一下我 <span data-icon="arrow-up-right"></span
+            ></a>
+          </div>
+          <div class="hero-footnote">
+            <span class="green-dot"></span> 保持好奇，今天也有新的小发现。
+          </div>
+        </div>
+        <img
+          class="hero-art"
+          src="/assets/little-world.svg"
+          alt="蓝天下，背着小书包的卡通小伙伴坐在绿色山丘上，陪着太阳一起微笑"
+          fetchpriority="high"
+        />
+        <div class="hero-sticker">
+          生活嘛，开心最重要！<span>HAVE A NICE DAY ☺</span>
+        </div>
+        <span class="hero-spark spark-one" aria-hidden="true">✧</span
+        ><span class="hero-spark spark-two" aria-hidden="true">✦</span>
+      </section>
+
+      <div class="weather-strip">
+        <span><span data-icon="sun"></span> 今天也是值得记录的一天</span
+        ><span
+          >写一点代码 <i>·</i> 看一点风景 <i>·</i> 收集一点快乐
+          <span class="strip-flower">✿</span></span
+        >
+      </div>
+      <div id="connection-notice" class="connection-notice" hidden></div>
+
+      <div class="content-layout">
+        <section
+          class="main-column"
+          id="feed"
+          aria-label="博客内容"
+          tabindex="-1"
+        >
+          <div id="page-intro"></div>
+          <div class="section-heading">
+            <div>
+              <div class="section-kicker" id="section-kicker">
+                LITTLE NOTES, BIG MEMORIES
+              </div>
+              <h2 id="feed-title">
+                最近的小记录
+                <span class="heading-sprout" aria-hidden="true">⌁</span>
+              </h2>
+            </div>
+          </div>
+          <div class="feed-toolbar">
+            <div
+              id="category-tabs"
+              class="category-tabs"
+              role="group"
+              aria-label="筛选文章分类"
+            ></div>
+            <div class="view-controls">
+              <span id="sort-label">最新发布</span
+              ><button
+                class="icon-button active"
+                id="grid-view"
+                aria-label="网格视图"
+                aria-pressed="true"
+              >
+                <span data-icon="grid"></span></button
+              ><button
+                class="icon-button"
+                id="list-view"
+                aria-label="列表视图"
+                aria-pressed="false"
+              >
+                <span data-icon="list"></span>
+              </button>
+            </div>
+          </div>
+          <div id="search-summary" class="search-summary" hidden></div>
+          <div
+            id="article-grid"
+            class="article-grid"
+            aria-live="polite"
+            aria-busy="true"
+          ></div>
+          <nav id="pagination" class="pagination" aria-label="文章分页"></nav>
+          <div class="end-note" id="end-note">
+            <span></span> 不慌不忙，一点一点生长 <span>✿</span><span></span>
+          </div>
+        </section>
+
+        <aside class="sidebar" aria-label="博主与博客信息">
+          <section class="profile-card outlined-card">
+            <div class="profile-doodle" aria-hidden="true">
+              ✦ <span>hello!</span> ✧
+            </div>
+            <div class="profile-avatar">
+              <img
+                src="/assets/avatar.svg"
+                alt="嘉丰的卡通头像"
+                width="96"
+                height="96"
+              />
+            </div>
+            <h2>嗨，我是嘉丰 <span aria-hidden="true">✌</span></h2>
+            <p>一个在代码和生活里<br />慢慢长大的小同学。</p>
+            <div class="profile-badges">
+              <span>⌨ 编程学习中</span><span>☀ 快乐收集中</span>
+            </div>
+            <div class="profile-stats">
+              <div>
+                <strong id="stat-articles">—</strong><span>篇文章</span>
+              </div>
+              <div>
+                <strong id="stat-categories">—</strong><span>个分类</span>
+              </div>
+              <div><strong>∞</strong><span>份好奇心</span></div>
+            </div>
+            <a href="#about" class="button profile-link"
+              >来认识一下我 <span data-icon="arrow-up-right"></span
+            ></a>
+          </section>
+          <section class="notice-card">
+            <span class="tape" aria-hidden="true"></span>
+            <h2>
+              <span data-icon="megaphone"></span> 小小公告
+              <span aria-hidden="true">✧</span>
+            </h2>
+            <p>
+              欢迎来到我的小小天地！<br />这里记录学习，也认真生活。<br />不用着急成为很厉害的人，<br />每天进步一点点就很好啦。
+            </p>
+            <div>一起慢慢来吧 <span aria-hidden="true">♡</span></div>
+          </section>
+          <section class="tag-card outlined-card">
+            <h2><span data-icon="hash"></span> 灵感便利贴</h2>
+            <p>点击一个词，看看相关的小记录。</p>
+            <div class="tag-cloud" id="tag-cloud">
+              <button data-search="Java">Java</button
+              ><button data-search="Spring Boot">Spring Boot</button
+              ><button data-search="MySQL">MySQL</button
+              ><button data-search="生活">生活碎片</button
+              ><button data-search="风景">沿途风景</button
+              ><button data-search="学习">学习日常</button>
+            </div>
+          </section>
+          <div class="sidebar-footer">
+            <svg viewBox="0 0 180 50" aria-hidden="true">
+              <path d="M4 38Q20 10 35 36T67 32T100 32T134 28T174 28" />
+            </svg>
+            <p>心里有光，日子就会亮一点。</p>
+            <span>STAY CURIOUS. KEEP GROWING.</span>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <a href="#home">嘉丰的小小博客 <span>✿</span></a>
+        <p>用文字留住生活，用热爱填满日常。</p>
+      </div>
+      <div class="footer-right">
+        <a id="footer-admin-link" href="/admin/index.html" hidden>管理后台</a>
+        <span
+          >© <span id="copyright-year">2026</span> 嘉丰 · Made with a little
+          love ♡</span
+        ><a href="#main" id="back-top"
+          >回到顶部 <span data-icon="arrow-up"></span
+        ></a>
+      </div>
+    </footer>
+    <dialog id="modal" aria-labelledby="modal-title">
+      <div class="modal-heading">
+        <div>
+          <span class="section-kicker" id="modal-kicker"
+            >WELCOME TO MY LITTLE WORLD</span
+          >
+          <h2 id="modal-title"></h2>
+        </div>
+        <button id="close-modal" class="icon-button" aria-label="关闭弹窗">
+          <span data-icon="x"></span>
+        </button>
+      </div>
+      <div id="modal-body"></div>
+    </dialog>
+    <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  </body>
+</html>

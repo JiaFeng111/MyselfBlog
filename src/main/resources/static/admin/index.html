@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#e4edda" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>管理后台 · 嘉丰的小小博客</title>
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/admin.css" />
+    <script src="/js/common.js" defer></script>
+    <script src="/js/admin.js" defer></script>
+  </head>
+  <body class="admin-body">
+    <a class="skip-link" href="#admin-content">跳到后台内容</a>
+    <section id="access-gate" class="access-gate" aria-live="polite">
+      <div class="gate-card">
+        <img src="/assets/avatar.svg" alt="" width="86" height="86" /><span
+          class="section-kicker"
+          >A LITTLE SPACE TO CREATE</span
+        >
+        <h1>正在确认你的身份…</h1>
+        <p>稍等一下，马上打开管理小屋。</p>
+      </div>
+    </section>
+    <div class="admin-layout" id="admin-layout" hidden>
+      <aside class="admin-sidebar">
+        <a class="admin-brand" href="#dashboard"
+          ><img src="/assets/favicon.svg" alt="" width="43" height="43" /><span
+            >嘉丰的小小博客<small>管理小屋 · ADMIN STUDIO</small></span
+          ></a
+        >
+        <div class="admin-sidebar-label">把热爱打理好</div>
+        <nav class="admin-nav" aria-label="后台导航">
+          <a href="#dashboard" data-admin-nav="dashboard"
+            ><span data-icon="home"></span>工作台<span>01</span></a
+          >
+          <a href="#articles" data-admin-nav="articles"
+            ><span data-icon="pen"></span>文章管理<span>02</span></a
+          >
+          <a href="#drafts" data-admin-nav="drafts"
+            ><span data-icon="archive"></span>草稿小抽屉<span>03</span></a
+          >
+          <a href="#categories" data-admin-nav="categories"
+            ><span data-icon="grid"></span>分类管理<span>04</span></a
+          >
+          <a href="#comments" data-admin-nav="comments"
+            ><span data-icon="message"></span>评论管理<span>05</span></a
+          >
+          <a href="#users" data-admin-nav="users"
+            ><span data-icon="user"></span>用户查询<span>06</span></a
+          >
+        </nav>
+        <div class="admin-sidebar-note">
+          <span>✿</span>
+          <p>认真记录，慢慢生长。<br />今天也写下一点小美好。</p>
+        </div>
+        <a class="admin-back-link" href="/"
+          ><span data-icon="arrow-left"></span>返回博客前台<span
+            data-icon="arrow-up-right"
+          ></span
+        ></a>
+      </aside>
+      <div class="admin-main">
+        <header class="admin-topbar">
+          <div>
+            <span class="section-kicker">MY LITTLE BLOG / ADMIN</span
+            ><span id="breadcrumb">工作台</span>
+          </div>
+          <div class="admin-identity">
+            <a class="admin-front-link" href="/"
+              ><span data-icon="home"></span>查看博客</a
+            >
+            <img
+              src="/assets/avatar.svg"
+              alt=""
+              width="32"
+              height="32"
+            /><strong id="admin-name"></strong
+            ><span class="admin-role">管理员</span
+            ><button id="admin-logout" class="admin-text-button">退出</button>
+          </div>
+        </header>
+        <main
+          id="admin-content"
+          class="admin-content"
+          tabindex="-1"
+          aria-live="polite"
+          aria-busy="true"
+        ></main>
+        <footer class="admin-footer">
+          <span>一点点记录，一点点进步。 ♡</span><a href="/">返回博客前台 →</a>
+        </footer>
+      </div>
+    </div>
+    <dialog id="modal" aria-labelledby="modal-title">
+      <div class="modal-heading">
+        <div>
+          <span class="section-kicker" id="modal-kicker"
+            >A LITTLE THOUGHT WORTH KEEPING</span
+          >
+          <h2 id="modal-title"></h2>
+        </div>
+        <button id="close-modal" class="icon-button" aria-label="关闭弹窗">
+          <span data-icon="x"></span>
+        </button>
+      </div>
+      <div id="modal-body"></div>
+    </dialog>
+    <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  </body>
+</html>
